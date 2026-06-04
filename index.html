@@ -114,16 +114,24 @@ left:-150px;
 border-radius:999px;
 }
 
-.stethoscope{
-position:absolute;
-right:-100px;
+.stethoscope-watermark{
+position:fixed;
 top:50%;
-transform:translateY(-50%) rotate(-15deg);
-font-size:850px;
-color:rgba(6,182,212,.08);
-filter:drop-shadow(0 0 50px rgba(6,182,212,.3));
+left:50%;
+transform:translate(-50%,-50%) rotate(-20deg);
+font-size:1200px;
+color:rgba(255,255,255,0.12);
 pointer-events:none;
-z-index:1;
+z-index:0;
+filter:
+drop-shadow(0 0 20px rgba(255,255,255,.15))
+drop-shadow(0 0 60px rgba(255,255,255,.08));
+}
+
+@media(max-width:768px){
+.stethoscope-watermark{
+font-size:700px;
+}
 }
 
 .reveal{
@@ -193,11 +201,30 @@ left:30%;
 top:25%;
 right:25%;
 }
+nav,
+section,
+footer{
+position:relative;
+z-index:2;
+}
 
+.stethoscope-2{
+top:80%;
+left:15%;
+font-size:900px;
+transform:translate(-50%,-50%) rotate(30deg);
+opacity:.05;
+}
 </style>
 </head>
 
 <body class="text-white">
+  <div class="stethoscope-watermark">
+<i class="fa-solid fa-stethoscope"></i>
+<div class="stethoscope-watermark stethoscope-2">
+<i class="fa-solid fa-stethoscope"></i>
+</div>
+</div>
 <div class="max-w-7xl mx-auto px-6 relative z-10"></div>
 <!-- NAV -->
 
@@ -674,13 +701,6 @@ class="text-cyan-400 font-bold text-lg">
 JTECH Web Solutions
 </a>
 
-<p class="mt-2">
-Email: jk3930166@gmail.com
-</p>
-
-<p>
-Phone: +254 794 068 708
-</p>
 
 </div>
 
